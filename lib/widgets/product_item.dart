@@ -29,14 +29,14 @@ class ProductItem extends StatelessWidget {
                   onPressed: () {
                     product.toggleFavouriteStatus();
                   },
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).colorScheme.secondary,
                   icon: Icon(
                     product.isFavourite
                         ? Icons.favorite
                         : Icons.favorite_border,
                   )),
               trailing: IconButton(
-                color: Theme.of(context).accentColor,
+                color: Theme.of(context).colorScheme.secondary,
                 icon: Icon(
                   Icons.shopping_cart,
                 ),

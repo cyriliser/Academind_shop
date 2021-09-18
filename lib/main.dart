@@ -28,7 +28,8 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.purple,
-          accentColor: Colors.deepOrange,
+          colorScheme:
+              ThemeData().colorScheme.copyWith(secondary: Colors.deepOrange),
           fontFamily: 'Lato',
         ),
         home: ProductsOverviewScreen(),
