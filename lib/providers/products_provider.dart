@@ -57,6 +57,10 @@ class ProductsProvider with ChangeNotifier {
       final response = await http.get(url);
       final extractedData = jsonDecode(response.body) as Map<String, dynamic>;
       final List<ProductProvider> loadedProducts = [];
+      if (extractedData.keys.contains('error')) {
+        // check if response has an error
+        throw HttpException("Firebase Error:" + extractedData['error']);
+      }
       extractedData.forEach((prodId, prodData) {
         loadedProducts.add(ProductProvider(
           id: prodId,
